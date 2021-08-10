@@ -12,6 +12,7 @@ export const AnimalProvider = (props) => {
         .then(res => res.json())
         .then(setAnimals)
     }
+    
 //?_expand=location connects objects in the database
     const addAnimal = animalObj => {
         return fetch("http://localhost:8088/animals", {
