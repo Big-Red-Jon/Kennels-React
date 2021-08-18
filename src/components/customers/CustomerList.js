@@ -14,19 +14,22 @@ export const CustomerList = () => {
 
 
   return (
-    <section className="customers">
-      {
-        customers.map(customer => {
-          return (
-            <div className="customer" id={`customer--${customer.id}`}>
-              <div className="customer__name">
-                Name: { customer.name }
+    <>
+      <h2>Customers</h2>
+      <section className="customers">
+        {
+          customers.map(customer => {
+            return (
+              <div className="customer" id={`customer--${customer.id}`}>
+                <div className="customer__name">
+                  Name: {customer.name}
+                </div>
+
               </div>
-              
-            </div>
-          )
-        })
-      }
-    </section>
+            )
+          })
+        }
+      </section>
+    </>
   )
 }

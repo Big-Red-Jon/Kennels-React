@@ -3,11 +3,12 @@ import { AnimalContext } from "./AnimalProvider"
 import { Animal } from "./Animal"
 import "./Animal.css"
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
-export const AnimalList = ({ history }) => {
+export const AnimalList = () => {
   const { getAnimals, animals } = useContext(AnimalContext)
-
+  const history = useHistory()
   // Initialization effect hook -> Go get animal data
   useEffect(() => {
     getAnimals()
@@ -15,10 +16,10 @@ export const AnimalList = ({ history }) => {
 
   return (
     <>
-      <h1>Animals</h1>
+      <h2>Animals</h2>
 
       <button onClick={() => history.push("/animals/create")}>
-        Make Reservation
+        Add Animal
       </button>
 
       <div className="animals">
